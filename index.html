@@ -1,0 +1,1021 @@
+<html>
+	<head>
+    <title>Anubhav Joshi</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="scripts/material_indigo_pink.min.css">
+		<script src="scripts/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      function upToTop(destino){
+          var current = $('.mdl-layout__content').scrollTop();
+          var stop = current + $(destino).position().top;
+          var delay = 1000;
+          $('.mdl-layout__content').animate({scrollTop: stop}, delay);
+      }
+      function upToTop2(destino){
+          document.querySelector('.mdl-layout').MaterialLayout.toggleDrawer();
+
+          var current = $('.mdl-layout__content').scrollTop();
+          var stop = current + $(destino).position().top;
+          var delay = 1000;
+          $('.mdl-layout__content').animate({scrollTop: stop}, delay);
+      }
+      function scrollToNext(){
+        var current = $('.mdl-layout__content').scrollTop();
+        var divs = ['#about-me', '#education', '#experiences', '#skills', '#interests', '#contact'];
+        var i = 0;
+        for (; i < divs.length; i++) {
+          //alert($(divs[i]).position().top);
+          if($(divs[i]).position().top > 0)
+            break;
+        }
+        var stop = current + $(divs[i]).position().top;
+        var delay = 1000;
+        $('.mdl-layout__content').animate({scrollTop: stop}, delay);
+      }
+    </script>
+
+		<style>
+		@font-face{
+			src: url('fonts/RobotoCondensed-Bold.ttf');
+			font-family: 'title_font';
+		}
+		@font-face{
+			src: url('fonts/RobotoCondensed-Regular.ttf');
+			font-family: 'body_font';
+		}
+
+    body {
+      font-family: 'body_font';
+      font-size: 18px;
+      background: #fff;
+    }
+
+		.mdl-layout__drawer-button {
+		  color: white;
+		}
+		.mdl-layout-title {
+			font-size: 35px;
+      font-family: 'title_font';
+		}
+		.mdl-navigation {
+			text-transform: uppercase;
+		}
+    .mdl-navigation__link {
+      font-size: 18px;
+    }
+    .mdl-tabs__tab-bar{
+      text-transform: uppercase;
+      background: #3f51b5;
+    }
+    .mdl-tabs__tab-bar > .mdl-tabs__tab{
+      font-size: 30px;
+      font-family: 'body_font';
+      color: #fff;
+    }
+    .mdl-grid {
+      padding-top: 30px;
+    }
+		.mdl-layout__content {
+			color: white;
+		}
+    .page-content {
+      color: #000;
+    }
+
+    .grey {
+      background: #424242;
+      border: none;
+    }
+
+    .fixed-button {
+      position: fixed;
+      bottom: 2%;
+      right: 2%;
+      z-index: 999;
+    }
+
+    .welcome {
+      width: 100%;
+      height: 400px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      color: #fff;
+      font-family: 'title_font';
+      font-size: 100px;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    #home {
+      width: 100%;
+      height: 700px;
+      background: url('images/wall.jpg') center / cover;
+      opacity: 0.7;
+    }
+
+    #about-me {
+      padding-bottom: 30px;
+    }
+    #education {
+      padding-bottom: 30px;
+    }
+    #experiences {
+      padding-bottom: 30px;
+    }
+    #skills {
+      padding-bottom: 30px;
+    }
+    #interests {
+      padding-bottom: 30px;
+    }
+    #contact {
+      height: 500px;
+      background: #424242;
+    }
+
+		</style>
+
+    <style>
+    .my-card.mdl-card {
+      width: 100%;
+      background: #fff;
+    }
+    .my-card.mdl-card > .mdl-card__title{
+      color: white;
+      min-height: 175px;
+      background: url('images/profile.jpg') center / cover;
+    }
+    .my-card.mdl-card > .mdl-card__supporting-text{
+      font-size: 16px;
+      color: #000;
+    }
+
+    .my-card2.mdl-card {
+      width: 100%;
+      background: #fff;
+    }
+    .my-card2.mdl-card > .mdl-card__title > .mdl-card__title-text{
+      font-family: 'body_font';
+    }
+    .my-card2.mdl-card > .mdl-card__supporting-text{
+      font-size: 18px;
+      color: #000;
+    }
+
+    .my-card3.mdl-card {
+      width: 100%;
+      
+    }
+    .my-card3.mdl-card > .mdl-card__title{
+      color: #fff;
+      background: #4caf50;
+    }
+    .my-card3.mdl-card > .mdl-card__title > .mdl-card__title-text{
+      font-family: 'body_font';
+    }
+    .my-card3.mdl-card > .mdl-card__supporting-text{
+      text-align: justify;
+      font-size: 18px;
+      color: #000;
+    }
+    </style>
+
+	</head>
+
+	<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="my-header mdl-layout__header mdl-layout__header--seamed">
+        <div class="mdl-layout__header-row mdl-layout--large-screen-only">
+          <!-- Title -->
+          <a style="text-decoration: none;color: #fff;" href="javascript:upToTop('#home');"><span class="mdl-layout-title">Anubhav Joshi</span></a>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="javascript:upToTop('#about-me');">Profile</a>
+            <a class="mdl-navigation__link" href="javascript:upToTop('#education');">Education</a>
+            <a class="mdl-navigation__link" href="javascript:upToTop('#experiences');">Experiences</a>
+            <a class="mdl-navigation__link" href="javascript:upToTop('#skills');">Skills</a>
+            <a class="mdl-navigation__link" href="javascript:upToTop('#interests');">Interests</a>
+            <a class="mdl-navigation__link" href="javascript:upToTop('#contact');">Contact</a>
+          </nav>
+        </div>
+        <div class="mdl-layout__header-row mdl-layout--small-screen-only">
+          <!-- Title -->
+          <a style="text-decoration: none;color: #fff;" href="javascript:upToTop('#home');"><span class="mdl-layout-title">Anubhav Joshi</span></a>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+        <span onclick="upToTop2('#home');" class="mdl-layout-title">Home</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="javascript:upToTop2('#about-me');">Profile</a>
+          <a class="mdl-navigation__link" href="javascript:upToTop2('#education');">Education</a>
+          <a class="mdl-navigation__link" href="javascript:upToTop2('#experiences');">Experiences</a>
+          <a class="mdl-navigation__link" href="javascript:upToTop2('#skills');">Skills</a>
+          <a class="mdl-navigation__link" href="javascript:upToTop2('#interests');">Interests</a>
+          <a class="mdl-navigation__link" href="javascript:upToTop2('#contact');">Contact</a>
+        </nav>
+      </div>
+
+      <main class="mdl-layout__content">
+
+        <a id="floating-button" href="javascript:scrollToNext();" class="fixed-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-button--fab">
+          <i class="material-icons">keyboard_arrow_down</i>
+        </a>
+
+        <div id="home">
+
+          <div class="mdl-grid">
+
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--1-col-tablet mdl-cell--4-col-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <button class="welcome mdl-button mdl-js-button">
+                Hello<br/>World !!
+              </button>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--1-col-tablet mdl-cell--4-col-phone">
+            </div>
+
+          </div>
+        </div>
+        
+        <div id="about-me">
+
+          <div class="mdl-tabs__tab-bar">
+              <a href="#about-me" class="mdl-tabs__tab">Profile</a>
+          </div>
+          
+          <div class="mdl-grid">
+
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--8dp">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--bottom mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    <div class="my-card mdl-card">
+
+                      <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text"></h2>
+                      </div>
+
+                      <div class="mdl-card__supporting-text">
+                        <b>DETAILS</b><br/><br/>
+                        <b>Name</b><br/>Anubhav Joshi<br/>
+                        <b>Age</b><br/>21 years<br/>
+                        <b>Educational Qualification</b><br/>B.Tech. Graduate<br/>
+                        <b>Current Engagement</b><br/>Going to start as SDE at Amazon<br/>
+
+                      </div>
+
+                      <div class="mdl-card__actions">
+                        <iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fjoshi9042&width=450&height=80&layout=standard&show_faces=true&appId=813874898668762" width="450" height="40" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    <div class="my-card2 mdl-card">
+
+                      <div class="mdl-card__title">
+                        <h2 style="color:#e91e63" class="mdl-card__title-text">About Me</h2>
+                      </div>
+
+                      <div class="mdl-card__supporting-text mdl-card--expand">
+                        My name is Anubhav Joshi and I am a developer/programmer.<br/>
+                        I have completed my graduation in Computer Science and Engineering from IIT Patna. Soon I am going to start working as SDE at Amazon.<br/><br/>
+
+                        I like tackling practical problems and developing software solution for them. Learning about news tools, libraries, technologies catches my interest. When I have time I find a new library/tool and give it a try.<br/><br/>
+
+                        Apart from the  above, I love watching TV shows and anime, listening to music, mobile games. Exercise for physical fitness is also a part of my daily routine.<br/>
+
+                      </div>
+
+                      <div class="mdl-card__actions" align="right">
+                          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="files/Anubhav Joshi Resume.pdf" target="_blank">
+                            Resume in PDF
+                          </a>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--bottom mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                  </div>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--bottom mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="education">
+
+          <div class="mdl-tabs__tab-bar">
+              <a href="#education" class="mdl-tabs__tab">Education</a>
+          </div>
+
+          <div class="mdl-grid">
+
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+              <div class="my-card3 mdl-card mdl-shadow--8dp">
+
+                  <div class="mdl-card__title">
+                    <div class="mdl-card__title-text">
+                      Indian Institute of Technology Patna<br/>
+                      July 2012 - May 2016
+                    </div>
+                  </div>
+
+                  <div class="mdl-card__supporting-text mdl-card--expand">
+                    <b>GRADUATION<br/></b>
+                    <b>B.Tech. - Computer Science and Engineering<br/></b>
+                    <b>CPI: 9.27/10<br/></b>
+
+                    <br/>
+                    Studying in IIT was a dream come true. College helped me widen my horizon in various aspects of my career as well as life. Working on assignments in the lab helps me remember various tips and tools that still come handy.<br/>
+                    Living and working together was one thing that was the best aspect of college. I did lot of projects both individually and in team. Working together with friends helped me identify the benefits of teamwork. The projects are listed in the next section.<br/>
+                    Apart from that, I held several positions of responsibilty during my time at college. I was the Coordinator of the Computer Science Club, Webmaster of the Entrepreneurship Club and also the Google Student Ambassador.
+
+                  </div>
+
+                  <div class="mdl-card__actions">
+                  </div>
+
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+              <div class="my-card3 mdl-card mdl-shadow--8dp">
+
+                  <div class="mdl-card__title">
+                    <div class="mdl-card__title-text">
+                      City Montessori School Lucknow<br/>
+                      July 2002 - June 2012
+                    </div>
+                  </div>
+
+                  <div class="mdl-card__supporting-text mdl-card--expand">
+                    <b>INTERMEDIATE<br/></b>
+                    <b>ISC Board<br/></b>
+                    <b>93.50%<br/></b>
+
+                    <br/>
+                    In Intermediate I had Physics, Chemistry, Maths, English and Computer. Those were the times when the focus was to get into good college for pursuing Computer Engineering and I successfully cracked IIT-JEE.<br/>
+                    I was also the Head Boy of the school in my Intermediate and managed student affairs of the college.<br/>
+                    <br/>
+
+                    <b>HIGH SCHOOL<br/></b>
+                    <b>ICSE Board<br/></b>
+                    <b>96.40%<br/></b>
+
+                    <br/>
+                    I had all subjects in my High School which included English, Hindi, Maths, Sciences, Social Sciences and Computer. High school was the time when I first got acquainted with Java.<br/>
+                    <br/>
+
+                  </div>
+
+                  <div class="mdl-card__actions">
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--bottom mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+            
+
+          </div>
+
+        </div>
+
+        <div id="experiences">
+
+          <div class="mdl-tabs__tab-bar">
+              <a href="#experiences" class="mdl-tabs__tab">Experiences</a>
+          </div>
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-shadow--8dp">
+
+              <div style="background:#4caf50" class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b style="color:#fff; font-size:20px">WORK EXPERIENCE</b>
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--hide-phone">
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Amazon</b><br/>
+                    Hyderabad, India<br/>
+                    Start from July 2016
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Software Development Engineer (SDE)</b><br/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Amazon</b><br/>
+                    Hyderabad, India<br/>
+                    May 2015 - July 2015
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div align="justify" class="mdl-cell mdl-cell--12-col">
+                    <b>SDE Intern</b><br/><br/>
+
+                    Part of Inbound Shipment Visibility team. The team was responsible for providing visibility of the incoming shipments from vendors to the Amazon warehouses.<br/>
+
+                    Developed a tool for matching the ASN from vendors to the ISD from carriers. Added new APIs in three different services and developed UI and its backend for calling these APIs to display the output and then performing match based on user input. Received <b>Customer Champion Award</b> for this project.<br/>
+
+                    Centralized the configuration of three different services on Amazon S3 so that they can be updated easily at one place and services would refresh their local caches hourly to update these configurations.
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Google Summer of Code</b><br/>
+                    May 2014 - August 2014
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div align="justify" class="mdl-cell mdl-cell--12-col">
+                    <b>Student Developer</b><br/><br/>
+                    
+                    The project was <b>Improving Error Reporting and Fixing Related Issues in Django</b>. The error messages raised can sometimes be confusing or misleading, sometimes due to wrapping and re-raising errors when it shouldn't or sometimes it's simply a matter of not catching the right errors. This project aimed at fixing such issues.<br/><br/>
+
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://goo.gl/C90l1Q" target="_blank">
+                      View proposal
+                    </a> &nbsp
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://goo.gl/7tjBkP" target="_blank">
+                      View diff
+                    </a> &nbsp
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="http://goo.gl/qGGhok" target="_blank">
+                      View documentation
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+          </div>
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-shadow--8dp">
+
+              <div style="background:#4caf50" class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b style="color:#fff; font-size:20px">COLLEGE PROJECTS</b>
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--hide-phone">
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>B.Tech. Final Year Project</b><br/>
+                    August 2015 - May 2016
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Capturing behavioral traits based on mobile usage characteristics for efficient recommendation engine</b><br/><br/>
+                    
+                    The main objective of the project was to show that the mobile usage behavior can capture various behavioral traits of a person, namely Social Behavior, Financial Behavior, Psychological Behavior and hence can be used for targeted advertisements<br/>
+                    Developed an android application for collecting user's call log and user queries and website/app visits. The data obtained from the user and along with the ground truth data is processed, and then used in the classifier for each behavioral class.<br/>
+                    System design was divided into five parts: Data Logging, Storage, Ground Data, User Data Processing, Classification.
+                    The technologies used were <u>Android</u> for data logging and ground data collection, <u>Amazon S3</u> and <u>Amazon EC2</u> for storage and server and <u>Python Rake</u> and <u>NLTK</u> for processing and classication.<br/>
+                    Initial results found showed that user's behaviour was reflected from different mobile usage characterstics. Furthur work would be carried on by another student of the college.<br/><br/>
+
+
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://gist.github.com/coder9042/6878bf409b67fca533f2869b3388759b" target="_blank">
+                      View Documentation on Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>ChatApp</b><br/>
+                    March 2015
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>A Java based chat application</b><br/><br/>
+                    
+                    Implemented a chat application using Java. It comprised of two parts: Authentication Server and App. The Authentication Server comprised of the class which would act as the main server that will be used for various authentication/identification processes during chatting. The App comprises of the interface and the functionality that would be used for chatting.<br/>
+                    Features include one on one chat, parallel chat with multiple friends, group chat, audio messages and video chat.<br/>
+                    Components used are standard <u>javax.swing</u> for interface <u>java.net</u> for connection <u>javax.sound</u> for audio messages and <u>org.opencv</u>(opencv library) for video chatting.<br/><br/>
+
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://github.com/coder9042/ChatApp" target="_blank">
+                      View Source on Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Webmail</b><br/>
+                    November 2014
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Android Application for IIT Patna Webmail and Gmail.</b><br/><br/>
+                    
+                    Developed an Android app for managing email using <u>Android</u> and <u>Javamail</u>.<br/>
+                    Features include compose, send, read, flag, delete mails and attachments. The interface is user-friendly with different actions available as action buttons. Notifications on the fly for new mails in inbox.<br/>
+                    Works on all devices running Android 4.0 or above.<br/><br/>
+
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://github.com/coder9042/Webmail" target="_blank">
+                      View Source on Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Central Information System (CIS)</b><br/>
+                    January 2014 - April 2014
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Django based Online timetable system for IIT Patna</b><br/><br/>
+
+                    Designed and developed a simple and intuitive system using <u>Django</u> for the institute. The system shall provide features to the user of the institute to stay connected to the college activities at all times and also be able to make/request changes. Using this anyone can know about any activities going in any part of the campus from anywhere and all he needs is an internet connection. Different features available for different types of users. The interface of the software is easy to use and self-explanatory.<br/><br/>
+
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://github.com/coder9042/cis" target="_blank">
+                      View Source on Github
+                    </a>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-grid">
+                <div style="color:black;" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>Blood Bank</b><br/>
+                    March 2014
+                  </div>
+                </div>
+                <div style="color:black;" class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <b>PHP based portal for blood bank</b><br/><br/>
+                    
+                    Developed with the objective to organize all the donors at one place where people can look out for other people who can help them when in need of blood.<br/>
+                    Developed using <u>PHP</u>, <u>MySQL</u> and <u>AngularJS</u>.<br/><br/>
+
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href="https://github.com/coder9042/blood_bank" target="_blank">
+                      View Source on Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+          </div>
+
+        </div>
+
+        <div id="skills">
+          <div class="mdl-tabs__tab-bar">
+              <a href="#skills" class="mdl-tabs__tab">Skills</a>
+          </div>
+
+          <div class="mdl-grid">
+            
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
+              <div class="my-card3 mdl-card mdl-shadow--8dp">
+
+                  <div class="mdl-card__title">
+                    <div class="mdl-card__title-text">
+                      Programming/Scripting Languages
+                    </div>
+                  </div>
+
+                  <div class="mdl-card__supporting-text mdl-card--expand">
+                    
+                    <table style="table-layout:fixed; width:100%" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th style="text-align:"center";width:25%">Language</th>
+                          <th style="width:25%">Some<br/>Knowledge</th>
+                          <th style="width:25%">Working<br/>Experience</th>
+                          <th style="width:25%">Proficient</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td style="width:25%">Java</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">JSP</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Android</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">XML</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Python</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">C</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">HTML</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">CSS</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">JavaScript</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Angular JS</td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">JQuery</td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">PHP</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">MySQL</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Perl CGI</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Material Design Lite</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                  </div>
+
+                  <div class="mdl-card__actions">
+                  </div>
+
+              </div>
+            </div>
+            
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+          
+          </div>
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
+              <div class="my-card3 mdl-card mdl-shadow--8dp">
+
+                  <div class="mdl-card__title">
+                    <div class="mdl-card__title-text">
+                      Tools
+                    </div>
+                  </div>
+
+                  <div class="mdl-card__supporting-text mdl-card--expand">
+                    <table style="table-layout:fixed; width:100%" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th style="text-align:"center";width:25%">Tool</th>
+                          <th style="width:25%">Some<br/>Knowledge</th>
+                          <th style="width:25%">Working<br/>Experience</th>
+                          <th style="width:25%">Proficient</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td style="width:25%">Django</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Photoshop</td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Vim</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Eclipse</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Android Studio</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Git</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Spring</td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                        <tr>
+                          <td style="width:25%">Jexia</td>
+                          <td style="width:25%"><i class="material-icons">done</i></td>
+                          <td style="width:25%"></td>
+                          <td style="width:25%"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="mdl-card__actions">
+                  </div>
+
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+          </div>
+
+        </div>
+
+        <div id="interests">
+          <div class="mdl-tabs__tab-bar">
+              <a href="#interests" class="mdl-tabs__tab">Interests</a>
+          </div>
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--8dp">
+              
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                  <img src="images/tools.png" width="100%" />
+                </div>
+                <div class="mdl-cell mdl-cell--9-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  
+                  <div style="width:100%;" class="mdl-card">
+
+                      <div class="mdl-card__title">
+                        <div class="mdl-card__title-text">
+                          Developing Tools
+                        </div>
+                      </div>
+
+                      <div style="text-align:justify; font-size: 18px; color:#000" class="mdl-card__supporting-text mdl-card--expand">
+                        I like developing software tools for solving small-small problems or which helps in simplifying some day to day work. This not only helps me but also I get to know about new technologies that I use in creating such tools.
+
+                      </div>
+
+                      <div class="mdl-card__actions">
+                      </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mdl-grid" style="padding-top:0">
+                <div class="mdl-cell mdl-cell--9-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  
+                  <div style="width:100%;" class="mdl-card">
+
+                      <div class="mdl-card__title">
+                        <div class="mdl-card__title-text">
+                          TV Shows/Anime
+                        </div>
+                      </div>
+
+                      <div style="text-align:justify; font-size: 18px; color:#000" class="mdl-card__supporting-text mdl-card--expand">
+                        
+                        Watching TV Shows is the best means to pass time and get rid of daily exhaustion. I like lots of genres like comedy/sitcom (FRIENDS), action (Daredevil), drama (House of Cards), fantasy (Da Vinci's Demons), etc.<br/>
+                        I also follow some anime like Naruto, One Piece, etc.
+                      </div>
+
+                      <div class="mdl-card__actions">
+                      </div>
+
+                  </div>
+
+                </div>
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                  <img src="images/tv.jpg" width="100%" />
+                </div>
+              </div>
+
+              <div class="mdl-grid" style="padding-top:0">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                  <img src="images/music.jpg" width="100%" />
+                </div>
+                <div class="mdl-cell mdl-cell--9-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  
+                  <div style="width:100%;" class="mdl-card">
+
+                      <div class="mdl-card__title">
+                        <div class="mdl-card__title-text">
+                          Music
+                        </div>
+                      </div>
+
+                      <div style="text-align:justify; font-size: 18px; color:#000" class="mdl-card__supporting-text mdl-card--expand">
+                        I like listening to both English and Hindi music. On one hand songs of Arijit Singh, Atif Aslam and Armaan Malik have a relaxing effect while on the other hand Maroon 5, Britney Spears and Taylor Swift set a good mood.
+                      </div>
+
+                      <div class="mdl-card__actions">
+                      </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mdl-grid" style="padding-top:0">
+                <div class="mdl-cell mdl-cell--9-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  
+                  <div style="width:100%;" class="mdl-card">
+
+                      <div class="mdl-card__title">
+                        <div class="mdl-card__title-text">
+                          Physical Fitness
+                        </div>
+                      </div>
+
+                      <div style="text-align:justify; font-size: 18px; color:#000" class="mdl-card__supporting-text mdl-card--expand">
+                        I am a big fan of staying fit and strong. I pay good attention to my daily exercises and diet in order to do that. I draw inspiration from many fitness enthusiasts who have worked hard and transformed themselves.
+                      </div>
+
+                      <div class="mdl-card__actions">
+                      </div>
+
+                  </div>
+
+                </div>
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
+                  <img src="images/fitness.png" width="100%" />
+                </div>
+              </div>
+
+              
+            </div>
+
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+          </div>
+
+
+        </div>
+
+        <div id="contact">
+
+          <div class="grey mdl-tabs__tab-bar">
+              <a href="#contact" class="mdl-tabs__tab">Contact</a>
+          </div>
+
+          <div align="center">
+            <br/>
+            "A dream you dream alone is only a dream.<br/>A dream you dream together is reality."
+            <br/>
+            <hr width="80%" />
+          </div>
+
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
+              <img src="images/mail.png" width="25" height="25" /> <a style="text-decoration:none; color:#fff; font-size:20px" href="mailto:anubhav9042@gmail.com" target="_blank">anubhav9042@gmail.com</a><br/><br/>
+              <img src="images/lkdn.png" width="25" height="25" /> <a style="text-decoration:none; color:#fff; font-size:20px" href="http://linkedin.com/in/anubhav-joshi" target="_blank">linkedin.com/in/anubhav-joshi</a><br/><br/>
+              <img src="images/github.png" width="25" height="25" /> <a style="text-decoration:none; color:#fff; font-size:20px" href="http://github.com/coder9042" target="_blank">github.com/coder9042</a><br/><br/>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
+              <img src="images/fb.png" width="25" height="25" /> <a style="text-decoration:none; color:#fff; font-size:20px" href="http://facebook.com/joshi9042" target="_blank">facebook.com/joshi9042</a><br/><br/>
+              <img src="images/gplus.png" width="25" height="25" /> <a style="text-decoration:none; color:#fff; font-size:20px" href="https://plus.google.com/+anubhavjoshi" target="_blank">plus.google.com/+anubhavjoshi</a><br/><br/>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+            </div>
+          </div>
+
+          <div align="center">
+            <br/><br/>
+            <hr width="80%" />
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </body>
+</html>
